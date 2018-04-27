@@ -1,0 +1,74 @@
+    <div class="main-wrapper">
+        <div class="header">
+            <div class="header-left">
+                <a href="/" class="logo">
+                    <img src="/asset/nel/img/logo.png" width="40" height="40" alt="">
+                </a>
+            </div>
+
+            <a id="mobile_btn" class="mobile_btn pull-left" href="#sidebar"><i class="fa fa-bars" aria-hidden="true"></i></a>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title"><font color="ffffff">MAIN MENU</font></li>
+                        <li><a href="/home"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <check if="{{ @me->type==1 }}">
+                          <true>
+                            <li><a href="/home/member/server"><i class="fa fa-pencil"></i> <span>Create Account</span></a></li>
+                            <li class="submenu">
+                                <a href="#"><i class="fa fa-server" aria-hidden="true"></i> <span> Server</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled" style="display: none;">
+                                    <li><a href="/home/admin/server"><i class="fa fa-circle-o"></i> List Server</a></li>
+                                    <li><a href="/home/admin/server/add"><i class="fa fa-circle-o"></i> Add Server</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#"><i class="fa fa-group" aria-hidden="true"></i> <span> Seller</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled" style="display: none;">
+                                    <li><a href="/home/admin/seller"><i class="fa fa-circle-o"></i> List Seller</a></li>
+                                    <li><a href="/home/admin/seller/add"><i class="fa fa-circle-o"></i> Add Seller</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> <span> Download</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled" style="display: none;">
+                                    <li><a href="/home/admin/server"><i class="fa fa-circle-o"></i> GTM (GSwitch)</a></li>
+                                    <li><a href="/home/admin/server"><i class="fa fa-circle-o"></i> Smart (AT10)</a></li>
+                                </ul>
+                            </li>
+                          </true>
+                          <false>
+                            <li><a href="/home/member/server"><i class="fa fa-pencil"></i> <span>Create Account</span></a></li>
+                            <li class="submenu">
+                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> <span> Download</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled" style="display: none;">
+                                    <li><a href="/home/admin/server"><i class="fa fa-circle-o"></i> GTM (GSwitch)</a></li>
+                                    <li><a href="/home/admin/server"><i class="fa fa-circle-o"></i> Smart (AT10)</a></li>
+                                </ul>
+                            </li> 
+                          </false>
+                        </check>
+                        <li class="menu-title"><font color="ffffff">TOOLS</font></li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-tags" aria-hidden="true"></i> <span> Contacts</span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled" style="display: none;">
+                                <li><a href="https://www.phcorner.net/members/813592/"><i class="fa fa-link"></i> PHCorner</a></li>
+                            </ul>
+                        </li>
+                        <check if="{{ @me->type==1 }}">
+                            <li class="submenu">
+                                <a href="#"><i class="fa fa-tags" aria-hidden="true"></i> <span> Miscellaneous</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled" style="display: none;">
+                                  <li><a href="#"><i class="fa fa-download"></i> <span>Update</span></a></li>
+                                </ul>
+                            </li>
+                        </check>
+                        <li><a href="/logout" ><i class=" fa fa-sign-out" ></i><span>Log out</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <include href="{{ @subcontent }}"/> 
+     
